@@ -1,5 +1,5 @@
 # PyDispatcher
 
 ### Command
-`-ti` - time interval
+`-ti` - time interval \n
 `-lf` - log file name
