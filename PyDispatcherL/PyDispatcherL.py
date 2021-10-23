@@ -13,17 +13,16 @@ def add_note(fileL, message):
 def logging():
     fileL = open("Testlog.txt", 'a')
     targetProcess = psutil.Process().children()[0]
-    for i in range(10):
+    while (True):
         print("!")
-        add_note(fileL, "CPU")
-        add_note(fileL, "RRS")
-        add_note(fileL, "TRS")
-        add_note(fileL, "NUM_HANDLE")
-        #       add_note(fileL, str(targetProcess.cpu_percent()))
-        #       add_note(fileL, str(targetProcess.memory_info()[0]))
-        #       add_note(fileL, str(targetProcess.memory_info()[1]))
-        #       add_note(fileL, str(targetProcess.num_handles()))
-        time.sleep(1)
+        #add_note(fileL, "CPU")
+        #add_note(fileL, "RSS")
+        #add_note(fileL, "VMS")
+        #add_note(fileL, "NUM_HANDLE")
+        message = "|CPU: " + str(targetProcess.cpu_percent()) + "|RSS: " + str(targetProcess.memory_info()[0]) + "|VMS: " + str(targetProcess.memory_info()[1]) + "|N_H: " + str(targetProcess.num_handles())
+
+        add_note(fileL, message)
+        time.sleep(0.1)
     fileL.close()
 
 
@@ -45,7 +44,7 @@ def start_procces():
     print_start_resurse_info_main()
 
     print("Enter path to programe (tromble):")
-    process_path = "D:\Game\Warcraft 3 Frozen Throne\Frozen Throne.exe" #"D:\Game\Warcraft 3 Frozen Throne\Frozen Throne.exe"
+    process_path = "notepad.exe"
     procces = subprocess.Popen(process_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     logging()
 
