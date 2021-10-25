@@ -5,4 +5,12 @@
 
 `-lf` - log file name
 
-`notepad.exe -ti 0.5 -lf newlogname.txt`
+Сommand examples:
+
+`notepad.exe -ti 1.5 -lf newlogname.txt`
+
+`notepad.exe -lf newlogname.txt`
+
+`notepad.exe -ti 1.5`
+
+`notepad.exe`
